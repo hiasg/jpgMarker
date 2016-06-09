@@ -31,19 +31,15 @@ def gps_convert(value):
 
     return d + (m / 60.0) + (s / 3600.0)
 
-font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSans.ttf",75)
-dirname, filename = os.path.split(os.path.abspath(__file__))
-print dirname
-print filename
-#for jpg in os.listdir(os.getcwd()):
-for jpg in os.listdir('/home/hias/original'):
-    print jpg
+#font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSans.ttf",75)
+font = ImageFont.truetype("arial.ttf",75)
+
+for jpg in os.listdir(os.getcwd()):
+#for jpg in os.listdir('/home/hias/original'):
     name, ext = os.path.splitext(jpg.lower())
     if name.startswith('dsc'):
-        print 'IMAGE'
         img = Image.open(jpg)
     if name.startswith('logo'):
-        print 'LOGO'
         logo = Image.open(jpg).resize((300,370))
         continue
 
